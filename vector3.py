@@ -3,7 +3,7 @@ import math
 
 class Vector3:
 
-    def __init__(self, x=0.0, y=0.0, z=0.0):
+    def __init__(self, x: float = 0.0, y: float = 0.0, z: float = 0.0):
         self.x = x
         self.y = y
         self.z = z
@@ -36,10 +36,10 @@ class Vector3:
     def __str__(self):
         return f"{str(self.x)}, {str(self.y)}, {str(self.z)}"
 
-    def mul_with_scalar(self, scalar):
+    def mul_with_scalar(self, scalar: float):
         return Vector3(self.x * scalar, self.y * scalar, self.z * scalar)
 
-    def length(self):
+    def length(self) -> float:
         return math.sqrt(self.x * self.x + self.y * self.y + self.z * self.z)
 
     def dot_product(self, other):
@@ -54,7 +54,7 @@ class Vector3:
                        self.z * other.x - self.x * other.z,
                        self.x * other.y - self.y * other.x)
 
-    def distance_to(self, other):
+    def distance_to(self, other) -> float:
         return math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2) + pow(self.z - other.z, 2))
 
 
