@@ -3,8 +3,9 @@ from vector3 import Vector3
 
 
 def main():
-    vec = Vector3.origin()
-    print(vec)
+    v = Vector3.origin()
+    print(v)
+    print(hash(v))
     pass
 
 

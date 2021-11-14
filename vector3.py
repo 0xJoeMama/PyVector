@@ -34,7 +34,13 @@ class Vector3:
         return self.length()
 
     def __str__(self):
-        return f"{str(self.x)}, {str(self.y)}, {str(self.z)}"
+        return f"({str(self.x)}, {str(self.y)}, {str(self.z)})"
+
+    def __eq__(self, o) -> bool:
+        return o.x == self.x and o.y == self.y and o.z == self.z
+
+    def __hash__(self) -> int:
+        return hash(self.x) * 31 + hash(self.y) * 69 + hash(self.z) * 51
 
     def mul_with_scalar(self, scalar: float):
         return Vector3(self.x * scalar, self.y * scalar, self.z * scalar)
